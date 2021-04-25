@@ -103,7 +103,7 @@ class Perceptron(object):
             y = (slope * i) + intercept
             plt.plot(i, y, 'ko')
 
-    def train(self, training_inputs, labels, fix, ax):
+    def train(self, training_inputs, labels, fig, ax):
         global STOP_CURRENT_ITER_FLAG
         for epoch_num in range(self.threshold):
             for inputs, label in zip(training_inputs, labels):
@@ -333,7 +333,7 @@ def calculate_and_plot_perceptron(number_of_samples_text_answer_A,
                                xb=xb,
                                ya=ya,
                                yb=yb)
-    my_perceptron.train(training_inputs, labels, fig, ax)
+    my_perceptron.train(training_inputs, labels, fig=fig, ax=ax)
 
 
 def calculate_and_plot_digram(number_of_samples_text_answer_A,
